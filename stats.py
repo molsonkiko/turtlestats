@@ -214,6 +214,8 @@ JOIN ( -- get highest overall score per day
     GROUP BY date
     ) md
 WHERE mud.date = md.date AND mud.mx = md.mx
+ORDER BY mud.date
+LIMIT 1
         '''
         return self.con.execute(query, 
             (first_day, first_day)

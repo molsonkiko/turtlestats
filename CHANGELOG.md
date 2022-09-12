@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  
 - broken stuff
 
+## [0.2.0] - 2022-09-12
+
+### Added
+
+- Add [turtlestats.display](/README.md#command-line-usage), a CLI app that creates simple matplotlib plots based on the stats for a given game.
+- Show celebratory message if the user gets a personal best or the best score so far today.
 
 ## [0.1.0] - 2022-09-11
  
