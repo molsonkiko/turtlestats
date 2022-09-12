@@ -64,9 +64,9 @@ scoreboard = Scoreboard()
 @display_stats_in_game(scoreboard, {"distance_traveled": float, "score": int}, "score")
 def main():
     while True:
-        distance_traveled += 0.5
+        scoreboard.distance_traveled += 0.5
         if user_did_good_thing:
-            score += 1
+            scoreboard.score += 1
         if user_did_bad_thing:
             break
 
