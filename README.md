@@ -30,6 +30,47 @@ def main():
 4. The `main` function shown above will now be augmented so that everytime you play the game, the `score` and `level` stats are logged in a database, and if you got the highest score, a little message will pop up congratulating the user.
 5. The `scoreboard` class will also be augmented with `best_score` and `best_score_username` attributes, which you can use inside your code if you want to display those attributes in-game (e.g., by showing them while the user is playing)
 
+How to integrate into existing code
+------------
+
+### Old code
+```py
+distance_traveled = 0
+score = 0
+
+while True:
+    distance_traveled += 0.5
+    if user_did_good_thing:
+        score += 1
+    if user_did_bad_thing:
+        break
+```
+
+### New code
+```py
+from turtlestats import display_stats_in_game
+
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.distance_traveled = 0
+        self.score = 0
+
+scoreboard = Scoreboard()
+
+@display_stats_in_game(scoreboard, {"distance_traveled": float, "score": int}, "score")
+def main():
+    while True:
+        distance_traveled += 0.5
+        if user_did_good_thing:
+            score += 1
+        if user_did_bad_thing:
+            break
+
+if __name__ == '__main__':
+    main()
+```
+
 Other stuff
 ------------
 
