@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  
 - broken stuff
 
+## [0.3.0] - 2022-09-12
+
+### Changed
+
+- Fix bug where there was no way to get out of choosing a directory in turtlestats.display if no `.turtlestats` directory exists by changing behavior so that `Cancel` quits the form. '.' can be used to get the current directory, after all.
+
 ## [0.2.0] - 2022-09-12
 
 ### Added

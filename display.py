@@ -91,20 +91,21 @@ def turtle_plot_maker():
     screen.title("turtlestats plotting form")
     plot_type = ''
     while True:
-        plot_type = screen.textinput("Type of plot", "Enter a plot type (must be top_users or trend)")
+        plot_type = screen.textinput("Type of plot", "Enter a plot type (must be 'top_users' or 'trend')")
         screen.listen()
         if plot_type is None:
             return
         if plot_type != 'top_users' and plot_type != 'trend':
-            print(f'{plot_type} is not a valid plot type')
+            print(f"'{plot_type}'' is not a valid plot type")
         else:
             break
     code_dir = ''
     while not os.path.isdir(code_dir):
-        code_dir = screen.textinput("Path to directory containing the game", "Enter the path to the code directory, or Cancel to use your current directory")
+        code_dir = screen.textinput("Path to directory containing the game", 
+        "Enter the path to the code directory. '.' is the current directory.")
         screen.listen()
         if code_dir is None:
-            code_dir = os.getcwd()
+           return
         try:
             code_dir = os.path.abspath(code_dir)
             get_dbname(code_dir)
