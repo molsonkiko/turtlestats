@@ -55,7 +55,8 @@ ORDER BY date''',
     plt.tight_layout()
     if img_name:
         plt.savefig(img_name)
-    plt.show()
+    else:
+        plt.show()
 
 
 def top_users_bar(stat: str, 
@@ -68,7 +69,9 @@ SELECT * FROM
     (SELECT username, MAX({stat}) mx 
     FROM stats GROUP BY username)
 ORDER BY mx DESC
-    '''
+LIMIT ?
+    ''',
+    (num_top_users,)
     )
     num_top_users = min(num_top_users, len(df))
     if num_top_users == 0:
@@ -81,7 +84,8 @@ ORDER BY mx DESC
     plt.tight_layout()
     if img_name:
         plt.savefig(img_name)
-    plt.show()
+    else:
+        plt.show()
 
 
 def turtle_plot_maker():
@@ -96,7 +100,7 @@ def turtle_plot_maker():
         if plot_type is None:
             return
         if plot_type != 'top_users' and plot_type != 'trend':
-            print(f"'{plot_type}'' is not a valid plot type")
+            print(f"'{plot_type}' is not a valid plot type")
         else:
             break
     code_dir = ''

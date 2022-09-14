@@ -19,6 +19,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  
 - broken stuff
 
+## [0.4.0] - 2022-09-13
+
+### Added
+
+- Automated tests using [pyautogui](https://pyautogui.readthedocs.io/en/latest/roadmap.html?highlight=window#roadmap) to automatically play a simple test game and populate a database.
+
+### Changed
+
+- If you write the plot to file using `display`, the matplotlib gui viewer no longer opens.
+
+### Fixed
+
+- The top_users `display` option now correctly limits the number of top users.
+
 ## [0.3.0] - 2022-09-12
 
 ### Changed

@@ -96,6 +96,7 @@ Dependencies
 
 - No dependencies outside the standard library for basic use.
 - To use the `turtlestats.display` module to make plots of scores, you need [pandas](https://pypi.org/project/pandas/) and [matplotlib](https://pypi.org/project/matplotlib/).
+- Running tests requires [pyautogui](https://pyautogui.readthedocs.io/en/latest/quickstart.html)
 
 Other stuff
 ------------

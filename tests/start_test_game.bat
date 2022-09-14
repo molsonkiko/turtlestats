@@ -1,0 +1,1 @@
+python -m turtlestats.tests.test_game
